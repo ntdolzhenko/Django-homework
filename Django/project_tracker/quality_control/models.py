@@ -16,9 +16,9 @@ class BugReport(models.Model):
         null=True
     )
     STATUS_CHOICES = [
-        ('New', 'Новая'),
+        ('New', 'Новый'),
         ('In_progress', 'В работе'),
-        ('Completed', 'Завершена')
+        ('Completed', 'Завершено')
     ]
     status = models.CharField(
         max_length=50,
@@ -32,7 +32,7 @@ class BugReport(models.Model):
         (4, '4'),
         (5, '5')
     ]
-    priority = models.CharField(
+    priority = models.IntegerField(
         max_length=10,
         choices=PRIORITY_CHOICES,
         default=1
@@ -70,10 +70,12 @@ class FeatureRequest(models.Model):
         (4, '4'),
         (5, '5')
     ]
-    priority = models.CharField(
+    priority = models.IntegerField(
         max_length=10,
         choices=PRIORITY_CHOICES,
         default=1
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
