@@ -9,8 +9,10 @@ def index(request):
     quality_control_page_url = reverse('quality_control:quality_control')
     html = f"<h1>Страница приложения tasks</h1><a href='{projects_list_url}'>Список всех проектов<br /></a><a href='{quality_control_page_url}'>Страница приложения quality_control</a>"
     return HttpResponse(html)
+
 # def another_page(request):
 #     return HttpResponse("Это другая страница приложения tasks.")
+
 def projects_list(request):
     projects = Project.objects.all()
 
@@ -20,6 +22,7 @@ def projects_list(request):
     projects_html += "</ul>"
 
     return HttpResponse(projects_html)
+
 def project_detail(request, project_id):
     project = get_object_or_404(Project, id=project_id)
     tasks = project.tasks.all()
@@ -30,6 +33,7 @@ def project_detail(request, project_id):
     response_html += '</ul>'
 
     return HttpResponse(response_html)
+
 def task_detail(request, project_id, task_id):
     project = get_object_or_404(Project, id=project_id)
     task = get_object_or_404(Task, id=task_id, project=project)

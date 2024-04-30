@@ -1,14 +1,10 @@
 from django.contrib import admin
 from .models import BugReport, FeatureRequest
 
-
-
-
-
 @admin.register(BugReport)
 class BugReportAdmin(admin.ModelAdmin):
     # какие поля отображаются на странице списка объектов в административном интерфейсе
-    list_display = ('title', 'project','status', 'priority',  'created_at', 'updated_at')
+    list_display = ('title', 'project', 'task', 'status', 'priority',  'created_at', 'updated_at')
     list_filter = ('status', 'priority', 'project')  # список фильтров для поиска
     # создает поисковую строку, чтобы отбирать объекты
     search_fields = ('title', 'project', 'status', 'priority')
@@ -19,7 +15,8 @@ class BugReportAdmin(admin.ModelAdmin):
             "fields":
                     ["title",
                      "description",
-                     "project"
+                     "project",
+                     "task"
                      ],
                 },
         ),
@@ -43,7 +40,7 @@ class BugReportAdmin(admin.ModelAdmin):
 @admin.register(FeatureRequest)
 class FeatureRequestAdmin(admin.ModelAdmin):
     # какие поля отображаются на странице списка объектов в административном интерфейсе
-    list_display = ('title', 'project', 'status', 'priority',  'created_at', 'updated_at')
+    list_display = ('title', 'project', 'task', 'status', 'priority',  'created_at', 'updated_at')
     list_filter = ('status', 'priority', 'project')  # список фильтров для поиска
     # создает поисковую строку, чтобы отбирать объекты
     search_fields = ('title', 'project', 'status', 'priority')
@@ -54,7 +51,8 @@ class FeatureRequestAdmin(admin.ModelAdmin):
             "fields":
                     ["title",
                      "description",
-                     "project"
+                     "project",
+                     "task"
                      ],
                 },
         ),

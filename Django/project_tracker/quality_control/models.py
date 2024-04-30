@@ -33,7 +33,6 @@ class BugReport(models.Model):
         (5, '5')
     ]
     priority = models.IntegerField(
-        max_length=10,
         choices=PRIORITY_CHOICES,
         default=1
     )
@@ -71,7 +70,6 @@ class FeatureRequest(models.Model):
         (5, '5')
     ]
     priority = models.IntegerField(
-        max_length=10,
         choices=PRIORITY_CHOICES,
         default=1
     )
