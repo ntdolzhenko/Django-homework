@@ -1,11 +1,18 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-    <h2>Создать новый проект</h2>
+{% load crispy_forms_tags %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Сохранить</button>
-        </form>
+<h2>Создать новый проект</h2>
+<form method="post">
+    {% csrf_token %}
+    {% crispy form %}
+</form>
+
 {% endblock %}
+ source .venv/bin/activate
+pip install Django
+ python -m django --version
+django-admin startproject project_tracker
+cd project_tracker
