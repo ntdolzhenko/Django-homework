@@ -1,2 +1,2 @@
 # Django-homework
-Repository for homework on the Django framework in the course of the Digital Department "Web Developer 2023"
+Репозиторий для домашнего задания по курсу "Web-разработчик" ЦК МГТУ им. Н.Э.Баумана.
